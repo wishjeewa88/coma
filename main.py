@@ -46,10 +46,10 @@ print("Generating Transform Matrices ..")
 
 M,A,D,U = mesh_sampling.generate_transform_matrices(facedata.reference_mesh, ds_factors)
 
-A = map(lambda x:x.astype('float32'), A)
-D = map(lambda x:x.astype('float32'), D)
-U = map(lambda x:x.astype('float32'), U)
-p = map(lambda x:x.shape[0], A)
+A = list(map(lambda x:x.astype('float32'), A))
+D = list(map(lambda x:x.astype('float32'), D))
+U = list(map(lambda x:x.astype('float32'), U))
+p = list(map(lambda x:x.shape[0], A))
 
 X_train = facedata.vertices_train.astype('float32')
 X_val = facedata.vertices_val.astype('float32')
